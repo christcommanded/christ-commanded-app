@@ -1,8 +1,13 @@
 import React from 'react';
 import './PageStyles.css';
-import { membershipSteps } from '../data/membershipSteps';
+import AnnouncementsTicker from '../components/membership/AnnouncementsTicker';
+import ContactForm from '../components/membership/ContactForm';
+import EventsList from '../components/membership/EventsList';
+import { membershipData } from '../data/membership';
 
 const Membership: React.FC = () => {
+  const { steps, events, announcements, contactReasons, contactEmail } = membershipData;
+
   return (
     <div className="page-section">
       <section className="page-hero">
@@ -28,7 +33,7 @@ const Membership: React.FC = () => {
           walk with you.
         </p>
         <div className="cards-grid">
-          {membershipSteps.map((step) => (
+          {steps.map((step) => (
             <article key={step.id} className="card">
               <h3>{step.title}</h3>
               <span>
@@ -47,6 +52,10 @@ const Membership: React.FC = () => {
           ))}
         </div>
       </section>
+
+      <AnnouncementsTicker announcements={announcements} />
+      <EventsList events={events} />
+      <ContactForm reasons={contactReasons} contactEmail={contactEmail} />
     </div>
   );
 };
