@@ -1,5 +1,4 @@
 import React, { ReactNode } from 'react';
-import { NavLink } from 'react-router-dom';
 import './MainLayout.css';
 
 const navLinks = [
@@ -22,17 +21,11 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => (
           <span className="brand-mark">Christ Commanded</span>
           <span className="brand-subtitle">Living the Gospel together</span>
         </div>
-        <nav className="nav">
+        <nav className="nav" aria-label="Primary">
           {navLinks.map((link) => (
-            <NavLink
-              key={link.to}
-              to={link.to}
-              className={({ isActive }) =>
-                `nav-link${isActive ? ' nav-link-active' : ''}`
-              }
-            >
+            <a key={link.to} className="nav-link" href={link.to}>
               {link.label}
-            </NavLink>
+            </a>
           ))}
         </nav>
         <a className="cta-button" href="/donations">

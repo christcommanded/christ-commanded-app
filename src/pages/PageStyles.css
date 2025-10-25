@@ -208,9 +208,19 @@
 }
 
 .secondary-link {
-  background: transparent;
-  color: var(--deep-blue);
-  border: 2px solid rgba(11, 29, 60, 0.25);
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--white);
+  border: 2px solid rgba(209, 163, 42, 0.5);
+}
+
+.secondary-link:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.cta-link:focus-visible,
+.secondary-link:focus-visible,
+.announcements-button:focus-visible {
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.35);
 }
 
 .section-heading {
