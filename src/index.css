@@ -6,6 +6,11 @@
   body {
     @apply font-sans bg-deep-blue text-white antialiased;
   }
+
+  :focus-visible {
+    outline: 3px solid theme('colors.gold');
+    outline-offset: 3px;
+  }
 }
 
 @layer utilities {
